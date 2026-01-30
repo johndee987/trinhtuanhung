@@ -2,11 +2,12 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trịnh Tuấn Hưng</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     * {
@@ -26,20 +27,22 @@
       scroll-snap-type: y mandatory;
     }
 
+    /* ========= SECTION CHUNG ========= */
     section {
       min-height: 100vh;
       scroll-snap-align: start;
     }
 
-    /* ===== HERO (TRANG ĐẦU) ===== */
+    /* ========= TRANG 1 ========= */
     .hero {
       position: relative;
-      background-image: url("bg.jpg");
-      background-size: cover;
-      background-position: center;
+      background: url("bg.jpg") center / cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    /* LỚP PHỦ */
     .hero::before {
       content: "";
       position: absolute;
@@ -51,19 +54,15 @@
     .hero-content {
       position: relative;
       z-index: 1;
-      min-height: 100vh;
-
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       gap: 18px;
-      text-align: center;
+      align-items: center;
     }
 
     .top-text {
-      font-size: 13px;
-      letter-spacing: 3px;
+      font-size: 14px;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
@@ -75,18 +74,17 @@
     }
 
     .sub-text {
-      font-size: 15px;
-      opacity: 0.9;
+      font-size: 16px;
+      opacity: 0.85;
     }
 
     .btn {
       margin-top: 10px;
-      padding: 12px 50px;
+      padding: 12px 52px;
       background: white;
-      color: #6b4a3a;
       border-radius: 999px;
       text-decoration: none;
-      font-size: 14px;
+      color: #6b4a3a;
       letter-spacing: 1px;
       transition: 0.3s;
     }
@@ -95,55 +93,87 @@
       opacity: 0.85;
     }
 
-    /* ===== ICON ===== */
     .icons {
-      margin-top: 18px;
       display: flex;
-      align-items: center;
       gap: 28px;
+      margin-top: 10px;
     }
 
     .icons a {
-      color: #6b4a3a;
       font-size: 18px;
+      color: #6b4a3a;
       text-decoration: none;
       transition: 0.3s;
     }
 
     .icons a:hover {
-      opacity: 0.6;
+      opacity: 0.7;
     }
 
-    .icons .chess {
-      font-size: 22px;
+    /* ========= TRANG 2 ========= */
+    .space {
+      display: grid;
+      grid-template-columns: 420px 1fr;
     }
 
-    /* ===== MY SPACE ===== */
-    #my-space {
-      background: #1e2a3a;
+    .space-left {
+      background: #2b120c;
       color: white;
-
+      padding: 40px;
       display: flex;
       flex-direction: column;
+      gap: 24px;
+    }
+
+    .avatar {
+      width: 200px;
+      border: 4px solid #d6a55a;
+    }
+
+    .space-left h2 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .contact-item i {
+      background: #d6a55a;
+      color: #2b120c;
+      width: 32px;
+      height: 32px;
+      display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
-      text-align: center;
+      border-radius: 50%;
     }
 
-    #my-space h2 {
-      font-size: 36px;
-      letter-spacing: 2px;
+    .space-right {
+      background: url("bg2.jpg") center / cover no-repeat;
+      position: relative;
     }
 
-    #my-space p {
-      opacity: 0.8;
+    .space-right::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle, rgba(0,0,0,0.15) 1px, transparent 1px);
+      background-size: 14px 14px;
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       h1 {
-        font-size: 42px;
+        font-size: 48px;
+      }
+
+      .space {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -151,24 +181,24 @@
 
 <body>
 
-  <!-- TRANG ĐẦU -->
+  <!-- ========= TRANG 1 ========= -->
   <section class="hero">
     <div class="hero-content">
       <div class="top-text">OOPS, IT’S ACTUALLY MY WEBSITE</div>
-
       <h1>Trịnh Tuấn Hưng</h1>
-
       <div class="sub-text">There’s nothing else to say</div>
 
       <a href="#my-space" class="btn">MY SPACE</a>
 
       <div class="icons">
-        <a href="https://www.facebook.com/trinh.tuan.hung.95679" target="_blank">
+        <a href="https://facebook.com" target="_blank">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
 
-        <a href="https://docs.google.com/document/d/1k1QvWtf0f2W88OiN_6kHTaL1n3-T2XZgc2BphEp93K8/edit" target="_blank" class="chess">
-          <i class="fa-regular fa-chess-pawn"></i>
+        <!-- CON TỐT CỜ VUA -->
+        <a href="https://docs.google.com/document/d/1k1QvWtf0f2W88OiN_6kHTaL1n3-T2XZgc2BphEp93K8/edit"
+           target="_blank">
+          <i class="fa-solid fa-chess-pawn"></i>
         </a>
 
         <a href="https://zalo.me/84974341874" target="_blank">
@@ -178,10 +208,35 @@
     </div>
   </section>
 
-  <!-- TRANG 2 -->
-  <section id="my-space">
-    <h2>MY SPACE</h2>
-    <p>Nội dung sẽ thêm sau</p>
+  <!-- ========= TRANG 2 ========= -->
+  <section id="my-space" class="space">
+    <div class="space-left">
+      <img src="avatar.jpg" class="avatar">
+
+      <h2>ĐỊA CHỈ LIÊN LẠC</h2>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        0974341874
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-globe"></i>
+        johndee987.github.io
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        tuanhung762009@gmail.com
+      </div>
+
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        Bình Xuyên – Vĩnh Phúc
+      </div>
+    </div>
+
+    <div class="space-right"></div>
   </section>
 
 </body>
