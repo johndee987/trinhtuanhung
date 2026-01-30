@@ -17,7 +17,9 @@
       width: 100%;
       height: 100%;
     }
-
+html {
+  scroll-behavior: smooth;
+}
     body {
       position: relative;
       font-family: "Times New Roman", serif; 
@@ -33,13 +35,7 @@
 
       color: #6b4a3a;
     }
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(245, 235, 220, 0.35); 
-  z-index: 0;
-}
+
 
     .container {
   position: relative; 
@@ -51,7 +47,7 @@ body::before {
   gap: 22px;
 }
 
-    }
+  
 
     .top-text {
       font-size: 14px;
@@ -122,12 +118,24 @@ body::before {
 .icons a:hover {
   opacity: 0.7;
 }
+    .section {
+  min-height: 100vh;        /* cao đúng 1 màn hình */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #1e2a3a;      /* tạm nền xanh đậm */
+  color: white;
+
+  text-align: center;
+}
     body::before {
   content: "";
   position: fixed;
   inset: 0;
   background: rgba(245, 235, 220, 0.35); /* màu be nhạt */
-  z-index: 0;
+  z-index: -1;
 }
 
   </style>
