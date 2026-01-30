@@ -5,25 +5,26 @@
   <title>Trinh Tuan Hung</title>
 
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
-      height: 100vh;
       font-family: Arial, sans-serif;
-      color: white;
+    }
 
-      /* ẢNH NỀN */
-      background: url("backgroun.jpg") no-repeat center center/cover;
-
+    body {
+      background: url("background.jpg") no-repeat center center / cover;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .box {
+    .overlay {
       text-align: center;
-      background: rgba(0,0,0,0.4);
-      padding: 40px;
-      border-radius: 12px;
+      color: #6b4a3a;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 50px 80px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
     }
 
     h1 {
@@ -32,27 +33,45 @@
     }
 
     p {
-      opacity: 0.8;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
-    .start {
+    .btn {
       display: inline-block;
-      padding: 12px 30px;
+      padding: 12px 40px;
       background: white;
-      color: black;
+      color: #6b4a3a;
+      border-radius: 30px;
       text-decoration: none;
-      border-radius: 25px;
       font-weight: bold;
+    }
+
+    .icons {
+      margin-top: 25px;
+    }
+
+    .icons a {
+      margin: 0 8px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #6b4a3a;
     }
   </style>
 </head>
 
 <body>
-  <div class="box">
+  <div class="overlay">
+    <p>OOPS, IT’S ACTUALLY MY WEBSITE</p>
     <h1>Trịnh Tuấn Hưng</h1>
     <p>There’s nothing else to say</p>
-    <a class="start" href="#">START</a>
+
+    <a class="btn" href="page2.html">START</a>
+
+    <div class="icons">
+      <a href="https://facebook.com/ten_fb_cua_m" target="_blank">FB</a>
+      <a href="https://instagram.com/ten_ig_cua_m" target="_blank">IG</a>
+      <a href="https://zalo.me/so_zalo" target="_blank">Zalo</a>
+    </div>
   </div>
 </body>
 </html>
