@@ -6,77 +6,103 @@
   <title>Trinh Tuan Hung</title>
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     html, body {
       width: 100%;
       height: 100%;
-      margin: 0;
+      font-family: "Georgia", serif;
     }
 
     body {
-      background-image: url("background.jpg");
+      background: url("background.jpg") no-repeat center center;
       background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-
       text-align: center;
       color: #6b4a3a;
-      font-family: Arial, sans-serif;
     }
 
-    .small-text {
-      letter-spacing: 1px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .top-text {
       font-size: 14px;
-      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     h1 {
       font-size: 64px;
-      margin: 0 0 20px 0;
+      font-weight: normal;
     }
 
-    .subtitle {
+    .sub-text {
       font-size: 16px;
-      margin-bottom: 40px;
+      opacity: 0.9;
     }
 
     .btn {
-      padding: 14px 50px;
+      margin-top: 10px;
+      padding: 12px 50px;
       background: white;
       color: #6b4a3a;
-      border-radius: 30px;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: bold;
-      margin-bottom: 40px;
-      display: inline-block;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #f2f2f2;
+    }
+
+    .icons {
+      margin-top: 25px;
+      display: flex;
+      gap: 20px;
     }
 
     .icons a {
-      margin: 0 10px;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 14px;
       color: #6b4a3a;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 42px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="small-text">OOPS, IT’S ACTUALLY MY WEBSITE</div>
+  <div class="container">
+    <div class="top-text">OOPS, IT’S ACTUALLY MY WEBSITE</div>
 
-  <h1>Trịnh Tuấn Hưng</h1>
+    <h1>Trịnh Tuấn Hưng</h1>
 
-  <div class="subtitle">There’s nothing else to say</div>
+    <div class="sub-text">There’s nothing else to say</div>
 
-  <a class="btn" href="page2.html">START</a>
+    <a href="page2.html" class="btn">START</a>
 
-  <div class="icons">
-    <a href="https://facebook.com/ten_fb_cua_m" target="_blank">FB</a>
-    <a href="https://instagram.com/ten_ig_cua_m" target="_blank">IG</a>
-    <a href="https://zalo.me/so_zalo" target="_blank">Zalo</a>
+    <div class="icons">
+      <a href="#">FB</a>
+      <a href="#">IG</a>
+      <a href="#">Zalo</a>
+    </div>
   </div>
 </body>
 </html>
