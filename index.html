@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trịnh Tuấn Hưng</title>
 
-  <!-- ICON -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
@@ -22,28 +22,24 @@
     body {
       font-family: "Times New Roman", serif;
       color: #6b4a3a;
-      text-align: center;
-
-      /* SCROLL SNAP */
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
     }
 
-    /* ===== SECTION CHUNG ===== */
     section {
       min-height: 100vh;
       scroll-snap-align: start;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
-    /* ===== TRANG ĐẦU ===== */
+    /* ===== HERO (TRANG ĐẦU) ===== */
     .hero {
-      background: url("bg.jpg") center / cover no-repeat;
       position: relative;
+      background-image: url("bg.jpg");
+      background-size: cover;
+      background-position: center;
     }
 
+    /* LỚP PHỦ */
     .hero::before {
       content: "";
       position: absolute;
@@ -52,38 +48,41 @@
       z-index: 0;
     }
 
-    .container {
+    .hero-content {
       position: relative;
       z-index: 1;
+      min-height: 100vh;
 
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 22px;
+      gap: 18px;
+      text-align: center;
     }
 
     .top-text {
-      font-size: 14px;
-      letter-spacing: 2px;
+      font-size: 13px;
+      letter-spacing: 3px;
       text-transform: uppercase;
     }
 
     h1 {
-      font-size: 110px;
+      font-size: 96px;
       font-weight: 600;
       line-height: 1;
       white-space: nowrap;
     }
 
     .sub-text {
-      font-size: 16px;
+      font-size: 15px;
       opacity: 0.9;
     }
 
     .btn {
       margin-top: 10px;
-      padding: 12px 52px;
-      background: #ffffff;
+      padding: 12px 50px;
+      background: white;
       color: #6b4a3a;
       border-radius: 999px;
       text-decoration: none;
@@ -93,10 +92,10 @@
     }
 
     .btn:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
-    /* ===== ICONS ===== */
+    /* ===== ICON ===== */
     .icons {
       margin-top: 18px;
       display: flex;
@@ -105,8 +104,9 @@
     }
 
     .icons a {
-      font-size: 20px;
       color: #6b4a3a;
+      font-size: 18px;
+      text-decoration: none;
       transition: 0.3s;
     }
 
@@ -115,19 +115,24 @@
     }
 
     .icons .chess {
-      font-size: 26px;
+      font-size: 22px;
     }
 
     /* ===== MY SPACE ===== */
     #my-space {
       background: #1e2a3a;
       color: white;
+
+      display: flex;
       flex-direction: column;
-      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
     }
 
     #my-space h2 {
-      font-size: 32px;
+      font-size: 36px;
       letter-spacing: 2px;
     }
 
@@ -146,9 +151,9 @@
 
 <body>
 
-  <!-- ===== TRANG 1 ===== -->
+  <!-- TRANG ĐẦU -->
   <section class="hero">
-    <div class="container">
+    <div class="hero-content">
       <div class="top-text">OOPS, IT’S ACTUALLY MY WEBSITE</div>
 
       <h1>Trịnh Tuấn Hưng</h1>
@@ -162,10 +167,8 @@
           <i class="fa-brands fa-facebook-f"></i>
         </a>
 
-        <a href="https://docs.google.com/document/d/1k1QvWtf0f2W88OiN_6kHTaL1n3-T2XZgc2BphEp93K8/edit"
-           target="_blank"
-           class="chess">
-          <i class="fa-solid fa-chess-king"></i>
+        <a href="https://docs.google.com/document/d/1k1QvWtf0f2W88OiN_6kHTaL1n3-T2XZgc2BphEp93K8/edit" target="_blank" class="chess">
+          <i class="fa-solid fa-chess-pawn"></i>
         </a>
 
         <a href="https://zalo.me/84974341874" target="_blank">
@@ -175,7 +178,7 @@
     </div>
   </section>
 
-  <!-- ===== TRANG 2 ===== -->
+  <!-- TRANG 2 -->
   <section id="my-space">
     <h2>MY SPACE</h2>
     <p>Nội dung sẽ thêm sau</p>
