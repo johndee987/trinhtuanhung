@@ -1,132 +1,185 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trịnh Tuấn Hưng</title>
 
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      font-family: "Times New Roman", serif;
+    html {
       scroll-behavior: smooth;
     }
 
-    /* WRAPPER – bật scroll snap */
-    .wrapper {
-      height: 100vh;
+    body {
+      font-family: "Times New Roman", serif;
+      color: #6b4a3a;
+      text-align: center;
+
+      /* SCROLL SNAP */
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
     }
 
-    /* MỖI SECTION = 1 TRANG */
-    .section {
-      height: 100vh;
+    /* ===== SECTION CHUNG ===== */
+    section {
+      min-height: 100vh;
       scroll-snap-align: start;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
     }
 
-    /* ===== TRANG 1 ===== */
+    /* ===== TRANG ĐẦU ===== */
     .hero {
-      background-image: url("bg.jpg"); /* đổi thành ảnh của mày */
-      background-size: cover;
-      background-position: center;
+      background: url("bg.jpg") center / cover no-repeat;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(245, 235, 220, 0.35);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .top-text {
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 110px;
+      font-weight: 600;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .sub-text {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 12px 52px;
+      background: #ffffff;
       color: #6b4a3a;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: 0.3s;
     }
 
-    .hero .content {
-      padding: 40px;
+    .btn:hover {
+      opacity: 0.8;
     }
 
-    .hero .small {
-      font-size: 12px;
+    /* ===== ICONS ===== */
+    .icons {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .icons a {
+      font-size: 20px;
+      color: #6b4a3a;
+      transition: 0.3s;
+    }
+
+    .icons a:hover {
+      opacity: 0.6;
+    }
+
+    .icons .chess {
+      font-size: 26px;
+    }
+
+    /* ===== MY SPACE ===== */
+    #my-space {
+      background: #1e2a3a;
+      color: white;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #my-space h2 {
+      font-size: 32px;
       letter-spacing: 2px;
     }
 
-    .hero h1 {
-      font-size: 72px;
-      font-weight: normal;
-      margin: 20px 0;
+    #my-space p {
+      opacity: 0.8;
     }
 
-    .hero .sub {
-      margin-bottom: 30px;
-    }
-
-    .hero button {
-      padding: 12px 36px;
-      border-radius: 30px;
-      border: none;
-      background: white;
-      color: #6b4a3a;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .hero button:hover {
-      background: #f2e8df;
-    }
-
-    .icons {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      font-size: 18px;
-    }
-
-    /* ===== TRANG 2 ===== */
-    .space {
-      background: #1f2f44;
-      color: white;
-      flex-direction: column;
-    }
-
-    .space h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 42px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <main class="wrapper">
+  <!-- ===== TRANG 1 ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="top-text">OOPS, IT’S ACTUALLY MY WEBSITE</div>
 
-    <!-- TRANG 1 -->
-    <section class="section hero">
-      <div class="content">
-        <p class="small">OOPS, IT’S ACTUALLY MY WEBSITE</p>
-        <h1>Trịnh Tuấn Hưng</h1>
-        <p class="sub">There’s nothing else to say</p>
-        <button onclick="document.querySelector('.space').scrollIntoView({behavior:'smooth'})">
-          MY SPACE
-        </button>
+      <h1>Trịnh Tuấn Hưng</h1>
 
-        <div class="icons">
-          <span>f</span>
-          <span>✉</span>
-          <span>☎</span>
-        </div>
+      <div class="sub-text">There’s nothing else to say</div>
+
+      <a href="#my-space" class="btn">MY SPACE</a>
+
+      <div class="icons">
+        <a href="https://www.facebook.com/trinh.tuan.hung.95679" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="https://docs.google.com/document/d/1k1QvWtf0f2W88OiN_6kHTaL1n3-T2XZgc2BphEp93K8/edit"
+           target="_blank"
+           class="chess">
+          <i class="fa-solid fa-chess-king"></i>
+        </a>
+
+        <a href="https://zalo.me/84974341874" target="_blank">
+          <i class="fa-solid fa-phone"></i>
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TRANG 2 -->
-    <section class="section space">
-      <h2>MY SPACE</h2>
-      <p>Nội dung sẽ thêm sau</p>
-    </section>
-
-  </main>
+  <!-- ===== TRANG 2 ===== -->
+  <section id="my-space">
+    <h2>MY SPACE</h2>
+    <p>Nội dung sẽ thêm sau</p>
+  </section>
 
 </body>
 </html>
