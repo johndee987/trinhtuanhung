@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Website</title>
+  <meta charset="UTF-8">
+  <title>Trịnh Tuấn Hưng</title>
 
   <style>
     /* RESET */
@@ -14,103 +14,119 @@
 
     html, body {
       height: 100%;
+      font-family: "Times New Roman", serif;
       scroll-behavior: smooth;
     }
 
-    /* BẬT SNAP SCROLL */
-    body {
+    /* WRAPPER – bật scroll snap */
+    .wrapper {
+      height: 100vh;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
-
-      font-family: "Times New Roman", serif;
-      color: #6b4a3a;
     }
 
-    /* MỖI TRANG = 1 MÀN HÌNH */
+    /* MỖI SECTION = 1 TRANG */
     .section {
       height: 100vh;
       scroll-snap-align: start;
-
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-
       text-align: center;
     }
 
-    /* ===== SECTION 1 ===== */
-    #home {
-      background-image: url("bg.jpg");
+    /* ===== TRANG 1 ===== */
+    .hero {
+      background-image: url("bg.jpg"); /* đổi thành ảnh của mày */
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
+      color: #6b4a3a;
     }
 
-    /* lớp phủ tối nhẹ cho chữ dễ đọc */
-    #home::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 255, 255, 0.4);
+    .hero .content {
+      padding: 40px;
     }
 
-    #home .content {
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      font-size: 72px;
+    .hero .small {
+      font-size: 12px;
       letter-spacing: 2px;
     }
 
-    p {
+    .hero h1 {
+      font-size: 72px;
+      font-weight: normal;
       margin: 20px 0;
-      font-size: 18px;
     }
 
-    .btn {
-      margin-top: 20px;
+    .hero .sub {
+      margin-bottom: 30px;
+    }
+
+    .hero button {
       padding: 12px 36px;
-      border-radius: 999px;
+      border-radius: 30px;
       border: none;
       background: white;
       color: #6b4a3a;
-      font-size: 16px;
+      font-size: 14px;
       cursor: pointer;
     }
 
-    .btn:hover {
-      opacity: 0.8;
+    .hero button:hover {
+      background: #f2e8df;
     }
 
-    /* ===== SECTION 2 ===== */
-    #my-space {
-      background: #1e2a3a;
+    .icons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 18px;
+    }
+
+    /* ===== TRANG 2 ===== */
+    .space {
+      background: #1f2f44;
       color: white;
+      flex-direction: column;
+    }
+
+    .space h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- TRANG 1 -->
-  <section id="home" class="section">
-    <div class="content">
-      <p>OOPS, IT’S ACTUALLY MY WEBSITE</p>
-      <h1>Trịnh Tuấn Hưng</h1>
-      <p>There’s nothing else to say</p>
-      <button class="btn" onclick="document.getElementById('my-space').scrollIntoView()">MY SPACE</button>
-    </div>
-  </section>
+  <main class="wrapper">
 
-  <!-- TRANG 2 -->
-  <section id="my-space" class="section">
-    <h2>MY SPACE</h2>
-    <p>Nội dung sẽ thêm sau</p>
-  </section>
+    <!-- TRANG 1 -->
+    <section class="section hero">
+      <div class="content">
+        <p class="small">OOPS, IT’S ACTUALLY MY WEBSITE</p>
+        <h1>Trịnh Tuấn Hưng</h1>
+        <p class="sub">There’s nothing else to say</p>
+        <button onclick="document.querySelector('.space').scrollIntoView({behavior:'smooth'})">
+          MY SPACE
+        </button>
+
+        <div class="icons">
+          <span>f</span>
+          <span>✉</span>
+          <span>☎</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANG 2 -->
+    <section class="section space">
+      <h2>MY SPACE</h2>
+      <p>Nội dung sẽ thêm sau</p>
+    </section>
+
+  </main>
 
 </body>
 </html>
